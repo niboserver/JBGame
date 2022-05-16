@@ -1,10 +1,12 @@
 function DoExampleLoginWithCustomID(){
     PlayFab.settings.titleId = "164F7";
+    var uuid = new DeviceUUID().get();
+    console.log(uuid);
     var loginRequest = {
         // Currently, you need to look up the required and optional keys for this object in the API reference for LoginWithCustomID. See the Request Headers and Request Body.
         TitleId: PlayFab.settings.titleId,
         //CustomId: document.getElementById("customId").value,
-        CustomId:"654654",
+        CustomId: uuid,
         CreateAccount: true
     };
 
